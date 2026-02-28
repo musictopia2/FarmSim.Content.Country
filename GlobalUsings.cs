@@ -1,0 +1,9 @@
+﻿global using FarmSim.Domain.Services.Animals;
+global using CommonBasicLibraries.CollectionClasses;
+global using FarmSim.Domain.Services.Core;
+global using FarmSim.Content.Country.ListClasses;
+global using FarmSim.Domain.Services.Crops;
+global using FarmSim.Domain.Services.Trees;
+global using FarmSim.Domain.Services.Workshops;
+global using FarmSim.Domain.Services.Inventory;
+global using FarmSim.Domain.Services.Worksites;

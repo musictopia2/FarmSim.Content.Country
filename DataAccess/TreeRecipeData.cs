@@ -1,7 +1,7 @@
 ﻿namespace FarmSim.Content.Country.DataAccess;
-internal static class TreeRecipeData
+public static class TreeRecipeData
 {
-    public static Task<BasicList<TreeRecipe>> GetAsync()
+    public static BasicList<TreeRecipe> Get()
     {
         BasicList<TreeRecipe> output = [];
         TreeRecipe tree = new()
@@ -20,6 +20,10 @@ internal static class TreeRecipeData
             IsFast = false
         };
         output.Add(tree);
-        return Task.FromResult(output);
+        return output;
+    }
+    public static Task<BasicList<TreeRecipe>> GetAsync()
+    {
+        return Task.FromResult(Get());
     }
 }

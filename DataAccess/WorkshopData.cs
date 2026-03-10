@@ -1,10 +1,9 @@
 ﻿namespace FarmSim.Content.Country.DataAccess;
-internal static class WorkshopData
+public static class WorkshopData
 {
-    public static Task<BasicList<WorkshopRecipe>> GetAsync()
+    public static BasicList<WorkshopRecipe> Get()
     {
         BasicList<WorkshopRecipe> output = [];
-
         WorkshopRecipe.AddWorkshopRecipe(output, CountryItemList.Flour, CountryWorkshopList.Windmill,
             TimeSpan.FromSeconds(20), //thought it was 30 but was 20.
             i => { i[CountryItemList.Wheat] = 2; });
@@ -105,6 +104,11 @@ internal static class WorkshopData
             TimeSpan.FromMinutes(10),
             i => { i[CountryItemList.Wool] = 3; });
 
+        return output;
+    }
+    public static Task<BasicList<WorkshopRecipe>> GetAsync()
+    {
+        var output = Get();   
         return Task.FromResult(output);
     }
 }
